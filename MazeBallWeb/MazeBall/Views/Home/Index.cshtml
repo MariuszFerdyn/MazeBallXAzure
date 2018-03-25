@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Scores";
+}
+
+<div class="jumbotron">
+    <h1>Maze Ball 3d - PC Windows 10, XBOX, Android</h1>
+    <p class="lead">Concept Game that utilize Microsoft Azure services like Azure Functions, SQL Database, App Service, VM, Applipplication Insights, Traffic Manager.</p>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Windows 10</h2>
+        <p>
+            You can play it on Windows 10!
+        </p>
+        <p><a class="btn btn-default" href="https://www.microsoft.com/en-us/store/p/maze-ball-3d-uwp/9pdhp4z1fbl4">Microsoft Store Online &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://mazeball.azurewebsites.net/MazeBall3dWeb/">WebGL &raquo;</a></p>
+        <p><a class="btn btn-default" href="https://mazeball.azurewebsites.net/MazeBall3dWeb/MazeBall3d.zip">Unzip&Exe &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Mobile</h2>
+        <p>You can play it on Android</p>
+        <p><a class="btn btn-default" href="https://play.google.com/store/apps/details?id=com.fastsms.Kula">Google Play &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>XBOX One</h2>
+        <p>You can play it on your XBOX One Console</p>
+        <p><a class="btn btn-default" href="https://www.microsoft.com/en-us/store/p/maze-ball-3d-for-xbox/9pcpljbg2s83">XBOX One &raquo;</a></p>
+    </div>
+</div>
+<h3>Best Scores:</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nick</th>
+            <th>Points</th>
+            <th>Time</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Nick</td>
+                <td>@item.Wynik</td>
+                <td>@item.Czas</td>
+                <td>@item.Data</td>
+            </tr>
+        }
+
+    </tbody>
+</table>

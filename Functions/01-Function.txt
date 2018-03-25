@@ -1,0 +1,31 @@
+#r "System.Configuration"
+#r "System.Data"
+
+using System.Net;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Threading.Tasks;
+
+public static HttpResponseMessage Run(HttpRequestMessage req, string nick, string mail, string system, int czas, int wynik, TraceWriter log)
+{
+    var str = ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString;
+    log.Info("C# HTTP trigger function processed a request.");
+    using (SqlConnection conn = new SqlConnection(str))
+    {
+        conn.Open();
+        var text = "INSERT INTO [dbo].[wyniki]([Nick],[Wynik],[Czas],[System],[Mail])  VALUES ('" + nick + "'," + wynik + "," 
+        + czas + ",'" + system + "','" + mail + "');";
+        
+        log.Info($"{text}");
+        
+        using (SqlCommand cmd = new SqlCommand(text, conn))
+        {
+            // Execute the command and log the # rows affected.
+            var rows =  cmd.ExecuteNonQuery();
+            log.Info($"{rows} rows were inserted");
+        }
+    }
+
+    // Fetching the name from the path parameter in the request URL
+    return req.CreateResponse(HttpStatusCode.OK, "Hello " + nick);
+}

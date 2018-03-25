@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "MazeBall3dWeb.data.unityweb",
+"asmCodeUrl": "MazeBall3dWeb.asm.code.unityweb",
+"asmMemoryUrl": "MazeBall3dWeb.asm.memory.unityweb",
+"asmFrameworkUrl": "MazeBall3dWeb.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
