@@ -41,4 +41,6 @@ jobs:
       run: |
         cd MazeBallWeb
         dir
+        cd _build
+        dir
         
