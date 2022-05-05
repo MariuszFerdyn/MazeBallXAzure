@@ -35,4 +35,10 @@ jobs:
 
     - name: dir
       run: |
-        dir _build
+        dir
+        
+    - name: dir2
+      run: |
+        cd _build
+        dir
+        
