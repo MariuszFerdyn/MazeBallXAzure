@@ -24,7 +24,15 @@ jobs:
 
     - name: Create Build Directory
       run: mkdir _build
-      
+
+    - name: PowerShell script
+      # You may pin to the exact commit or the version.
+      # uses: Amadevus/pwsh-script@1f1751bbf3d1a92127bfc6c32403283625880cbf
+      uses: Amadevus/pwsh-script@v2.0.1
+      with:
+        # PowerShell script to execute in Actions-hydrated context
+        script: "dir"
+
     - name: Restore Packages
       run: nuget restore MazeBallWeb/MazeBall.sln
 
