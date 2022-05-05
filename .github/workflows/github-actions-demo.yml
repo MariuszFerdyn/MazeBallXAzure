@@ -43,4 +43,6 @@ jobs:
         dir
         cd _build
         dir
+        cd bin
+        dir
         
