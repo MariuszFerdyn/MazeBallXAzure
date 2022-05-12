@@ -58,7 +58,7 @@ jobs:
     - name: DockerBuild
       run: |
         mkdir $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
-        robocopy $env:RUNNER_WORKSPACE\MazeBallXAzure\MazeBallWeb\_build $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\Content\C_C\inetpub\wwwroot /E
+        XCOPY $env:RUNNER_WORKSPACE\MazeBallXAzure\MazeBallWeb\_build $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\Content\C_C\inetpub\wwwroot /E/H/C/I
         Compress-Archive -Path $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\ -DestinationPath $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\MandatoryArtifacts.zip
 
     - name: Dir
