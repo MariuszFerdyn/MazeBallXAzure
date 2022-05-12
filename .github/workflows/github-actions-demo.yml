@@ -48,5 +48,4 @@ jobs:
         
     - name: zip
       run: |
-        cd $GITHUB_WORKSPACE
-        dir
+        set
