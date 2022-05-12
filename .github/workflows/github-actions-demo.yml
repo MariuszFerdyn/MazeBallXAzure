@@ -46,6 +46,8 @@ jobs:
         cd bin
         dir
         
-    - name: Zip Content
+    - name: ZipContent
       run: |
+      shell: powershell
+        cd $GITHUB_WORKSPACE
 	dir
