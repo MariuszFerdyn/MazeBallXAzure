@@ -78,3 +78,11 @@ jobs:
         dir
         docker build .
         docker images
+
+    - name: DockerTagAndPush
+      run: |
+        cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
+        dir
+        docker tag <none>:<none> mafamafa/mazeballweb:${GITHUB_SHA::8}
+        docker images
+        docker push mafamafa/mazeballweb:${GITHUB_SHA::8}
