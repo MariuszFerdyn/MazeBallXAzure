@@ -46,6 +46,6 @@ jobs:
         cd bin
         dir
         
-    - name: ZipContent
+    - name: zip
       run: |
-	dir
+        dir
