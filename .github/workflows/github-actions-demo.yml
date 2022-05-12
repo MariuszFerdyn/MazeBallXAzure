@@ -48,4 +48,4 @@ jobs:
         
     - name: docker
       run: |
-        docker images
+        dir
