@@ -33,6 +33,10 @@ jobs:
       run: |
         msbuild.exe MazeBallWeb/MazeBall.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
 
+    - name: EchoSHA
+      run: |
+        echo ${GITHUB_SHA::7}
+
     - name: dir
       run: |
         dir
@@ -83,6 +87,6 @@ jobs:
       run: |
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
-        docker tag <none>:<none> mafamafa/mazeballweb:${GITHUB_SHA::8}
+        docker tag "<none>:<none>" mafamafa/mazeballweb:${GITHUB_SHA::7}
         docker images
-        docker push mafamafa/mazeballweb:${GITHUB_SHA::8}
+        docker push mafamafa/mazeballweb:${GITHUB_SHA::7}
