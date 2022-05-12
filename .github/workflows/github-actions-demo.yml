@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: windows-2019
+    env:
+      SHA7: "${GITHUB_SHA:0:7}"
 
     steps:
     - uses: actions/checkout@v2
@@ -32,10 +34,6 @@ jobs:
     - name: Build Solution
       run: |
         msbuild.exe MazeBallWeb/MazeBall.sln /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
-
-    - name: EchoSHA
-      run: |
-        echo ${GITHUB_SHA::7}
 
     - name: dir
       run: |
