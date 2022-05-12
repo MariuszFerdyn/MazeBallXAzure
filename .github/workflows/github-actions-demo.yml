@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: windows-2019
-    env:
-      SHA7: $GITHUB_SHA:0:7
 
     steps:
     - uses: actions/checkout@v2
