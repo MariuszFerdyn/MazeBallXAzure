@@ -58,9 +58,5 @@ jobs:
         xcopy $RUNNER_WORKSPACE\MazeBallWeb\cd_build\bin $RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
         Compress-Archive -Path $RUNNER_WORKSPACE\MandatoryArtifacts\ -DestinationPath $RUNNER_WORKSPACE\DockerContext\MandatoryArtifacts.zip
         Get-ChildItem -Path Env:
-        cd $RUNNER_WORKSPACE
+        cd $RUNNER_WORKSPACE\DockerContext\
         dir
-
-
-
-MazeBallXAzure/DockerContext
