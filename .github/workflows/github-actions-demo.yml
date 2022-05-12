@@ -46,6 +46,7 @@ jobs:
         cd bin
         dir
         
-    - name: docker
+    - name: Zip Content
       run: |
-        dir
+        cd ${{GITHUB_WORKSPACE}}
+		    dir
