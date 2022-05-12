@@ -48,5 +48,5 @@ jobs:
         
     - name: Zip Content
       run: |
-        cd ${{GITHUB_WORKSPACE}}
+        cd $GITHUB_WORKSPACE
 	dir
