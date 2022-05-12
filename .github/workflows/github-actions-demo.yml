@@ -49,14 +49,19 @@ jobs:
     - name: GetEnvioriment
       run: |
         Get-ChildItem -Path Env:
+        
+    - name: Dir
+      run: |
         cd $RUNNER_WORKSPACE
         dir
-
+        
     - name: DockerBuild
       run: |
         mkdir $RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
-        xcopy $RUNNER_WORKSPACE\MazeBallWeb\cd_build\bin $RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
+        xcopy $RUNNER_WORKSPACE\MazeBallWeb\_build $RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
         Compress-Archive -Path $RUNNER_WORKSPACE\MandatoryArtifacts\ -DestinationPath $RUNNER_WORKSPACE\DockerContext\MandatoryArtifacts.zip
-        Get-ChildItem -Path Env:
+
+    - name: Dir
+      run: |
         cd $RUNNER_WORKSPACE\DockerContext\
         dir
