@@ -52,16 +52,16 @@ jobs:
         
     - name: Dir
       run: |
-        cd $env:RUNNER_WORKSPACE
+        cd $env:RUNNER_WORKSPACE\MazeBallXAzure
         dir
         
     - name: DockerBuild
       run: |
-        mkdir $env:RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
-        xcopy $env:RUNNER_WORKSPACE\MazeBallWeb\_build $env:RUNNER_WORKSPACE\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
-        Compress-Archive -Path $env:RUNNER_WORKSPACE\MandatoryArtifacts\ -DestinationPath $env:RUNNER_WORKSPACE\DockerContext\MandatoryArtifacts.zip
+        mkdir $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
+        xcopy $env:RUNNER_WORKSPACE\MazeBallXAzure\MazeBallWeb\_build $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\Content\C_C\inetpub\wwwroot
+        Compress-Archive -Path $env:RUNNER_WORKSPACE\MazeBallXAzure\MandatoryArtifacts\ -DestinationPath $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\MandatoryArtifacts.zip
 
     - name: Dir
       run: |
-        cd $env:RUNNER_WORKSPACE\DockerContext\
+        cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
