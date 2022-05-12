@@ -48,6 +48,4 @@ jobs:
         
     - name: ZipContent
       run: |
-      shell: powershell
-        cd $GITHUB_WORKSPACE
 	dir
