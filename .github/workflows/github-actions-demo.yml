@@ -65,3 +65,10 @@ jobs:
       run: |
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
+
+    - name: DockerBuild
+      run: |
+        cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
+        dir
+        docker build .
+        docker images
