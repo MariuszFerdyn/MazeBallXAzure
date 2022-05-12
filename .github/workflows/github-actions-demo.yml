@@ -46,6 +46,8 @@ jobs:
         cd bin
         dir
         
-    - name: zip
+    - name: getenvioriment
       run: |
         Get-ChildItem -Path Env:
+        cd $RUNNER_WORKSPACE
+        dir
