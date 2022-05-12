@@ -48,4 +48,4 @@ jobs:
         
     - name: zip
       run: |
-        set
+        Get-ChildItem -Path Env:
