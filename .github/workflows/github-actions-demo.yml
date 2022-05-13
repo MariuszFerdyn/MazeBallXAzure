@@ -1,4 +1,4 @@
-name: EZRep Build
+name: Mazeball Container Build
 
 on:
   push:
@@ -74,15 +74,12 @@ jobs:
 
     - name: DockerBuild
       run: |
+        $tag=(get-date -format yyMMddhhmm)
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
-        docker build .
+        docker build mafamafa/mazeballweb:$tag .
         docker images
 
     - name: DockerTagAndPush
       run: |
-        cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
-        dir
-        docker tag "<none>:<none>" mafamafa/mazeballweb:${GITHUB_SHA::7}
-        docker images
-        docker push mafamafa/mazeballweb:${GITHUB_SHA::7}
+        docker push mafamafa/mazeballweb:$tag
