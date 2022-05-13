@@ -75,11 +75,9 @@ jobs:
     - name: DockerBuild
       run: |
         $tag=(get-date -format yyMMddhhmm)
+        $image=${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
-        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag .
+        docker build -t $image .
         docker images
-
-    - name: DockerTagAndPush
-      run: |
-        docker push ${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag
+        docker push $image
