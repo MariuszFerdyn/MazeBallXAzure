@@ -77,7 +77,7 @@ jobs:
         $tag=(get-date -format yyMMddhhmm)
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
-        docker -t build mafamafa/mazeballweb:$tag .
+        docker build -t mafamafa/mazeballweb:$tag .
         docker images
 
     - name: DockerTagAndPush
