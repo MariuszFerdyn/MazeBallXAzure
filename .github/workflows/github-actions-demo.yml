@@ -75,7 +75,7 @@ jobs:
     - name: DockerBuild
       run: |
         $tag=(get-date -format yyMMddhhmm)
-        $image=${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag
+        $image="${{ secrets.DOCKERHUB_USERNAME }}/mazeballweb:$tag"
         cd $env:RUNNER_WORKSPACE\MazeBallXAzure\DockerContext\
         dir
         docker build -t $image .
